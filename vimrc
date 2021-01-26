@@ -30,14 +30,14 @@ Plugin 'kien/ctrlp.vim'            " Super Searching from vim, press ^Ctrl + P
 Plugin 'scrooloose/nerdtree'       " File browsing: NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'   " File browsing: to use tabs
 Plugin 'tpope/vim-fugitive'        " Git integration 
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}  " Powerline
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}  " Powerline
 
 " End of my plugins
 call vundle#end()                 " required
 " =============================================================================
 filetype plugin indent on         " required
 
-leg g:SimplyFold_docstring_preview=1  " To see the doctrings for the folder code
+" leg g:SimplyFold_docstring_preview=1  " To see the doctrings for the folder code
 
 set encoding=utf-8                " To support UTF-8 
 
