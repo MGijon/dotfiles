@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pepefail 
+set -euo pepefail
 
 
 echo "dotfile installer"
@@ -15,3 +15,35 @@ git --version
 git clone --depth 1 git#github.com:mgijon/dotfiles.git "$DOTFILES_PATH"
 
 "$DOTFILES_PATH/bin/dot" self install
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Python
+brew install python
+# PyCharm
+brew install --cask pycharm
+# R
+ brew install --cask r #brew install r
+# R Studio
+brew install --cask rstudio
+
+# Firefox
+brew install --cask firefox
+# Google Chrome
+brew install --cask google-chrome
+# Thunderbird
+brew install --cask thunderbird
+# Telegram
+brew install --cask telegram
+# Slack
+brew install --cask slack
+
+# Atom
+brew install --cask atom
+# Visual Studio Code
+brew install --cask visual-studio-code
+
+# Deezer
+brew install --cask deezer
+# Postman
+brew install --cask postman
