@@ -26,6 +26,8 @@ brew install --cask pycharm
  brew install --cask r #brew install r
 # R Studio
 brew install --cask rstudio
+# Docker
+brew install docker
 
 # Firefox
 brew install --cask firefox
@@ -38,6 +40,9 @@ brew install --cask telegram
 # Slack
 brew install --cask slack
 
+# Dropbox
+brew install --cask dropbox
+
 # Atom
 brew install --cask atom
 # Visual Studio Code
@@ -47,3 +52,10 @@ brew install --cask visual-studio-code
 brew install --cask deezer
 # Postman
 brew install --cask postman
+# Musescore
+brew install --cask musescore
+
+
+## Install Vundle
+sudo git clone https://github.com/gmarik/vundle.git $HOME\vimfiles\bundle\vundle
+# y luego la password para hacerlo funcionar
