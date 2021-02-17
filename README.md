@@ -46,3 +46,6 @@ bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/installer)
 ***
 <a name="#python-scripts"></a>
 ## Python scripts 
+
+* Execute with ```python3 script.py```.
+
