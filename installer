@@ -37,6 +37,8 @@ brew install --cask google-chrome
 brew install --cask thunderbird
 # Telegram
 brew install --cask telegram
+# Discord 
+brew install --cask discord
 # Slack
 brew install --cask slack
 
