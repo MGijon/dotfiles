@@ -48,4 +48,6 @@ bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/installer)
 ## Python scripts 
 
 * Execute with ```python3 script.py```.
+* CONTENT:
+	* **cleaner.py**: move files to their corresponding folders from Desktop and Downloads.
 
