@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 set -euo pepefail
-
 
 echo "dotfile installer"
 echo "--------------------"
@@ -43,6 +41,8 @@ brew install --cask discord
 brew install --cask skype
 # Slack
 brew install --cask slack
+# Obs Stream
+brew install --cask obs
 
 # Dropbox
 brew install --cask dropbox
