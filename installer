@@ -61,6 +61,8 @@ brew install --cask postman
 # Musescore
 brew install --cask musescore
 
+# 
+brew install gpg pinentry-mac
 
 ## Install Vundle
 sudo git clone https://github.com/gmarik/vundle.git $HOME\vimfiles\bundle\vundle
