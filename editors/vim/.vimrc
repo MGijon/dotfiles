@@ -4,21 +4,18 @@ filetype off                      " required
 set number                        " Show line number   
 set relativenumber                " Show relative number line 
 
-" Folfing
 set foldmethod=indent             " Enable folding
-set foldlevel=99
+set foldlevel=99                  " Setting fold level 
 nnoremap <space> za               " Enable folding with the spacebar
 
-
-
-" =============================================================================
+" =========================================================================== "
+"                                PLUGINGS                                     "  
+" =========================================================================== "
 " Set the runtime path to include Vundle and initialize 
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-
 Plugin 'gmarik/Vundle.vim'        " Vundle manage Vundle, required
-" Add other plugins here 
-
 Plugin 'tmhedberg/SimplyFold'     " To manage the folds
 Plugin 'vim-scripts/indentpython.vim'  " To get autoindent in Python
 "Bundle 'Valloric/YourCompleteMe'  " Auto-complete for Python 
@@ -31,9 +28,8 @@ Plugin 'scrooloose/nerdtree'       " File browsing: NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'   " File browsing: to use tabs
 Plugin 'tpope/vim-fugitive'        " Git integration 
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}  " Powerline
-
-" End of my plugins
 call vundle#end()                 " required
+
 " =============================================================================
 filetype plugin indent on         " required
 
@@ -76,3 +72,4 @@ call togglebg#map("<F5>")         " In solarized scheme: press F5 to change betw
 
 " File browsing: ignore a list of files 
 let NERDTreeIgnore=['\.pyc$', '\.~$']       " ignore .pyc files
+
