@@ -50,4 +50,4 @@ bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/installer)
 * Execute with ```python3 script.py```.
 * CONTENT:
 	* **cleaner.py**: move files to their corresponding folders from Desktop and Downloads.
-
+    * **rename.py**: rename files contained in a specified path  using a given pattern (consecutively).
