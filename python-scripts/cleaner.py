@@ -2,26 +2,22 @@
    - Downloads.
    - Desktop.
 """
-import os, shutil, pdb
+import os, shutil, pdb, sys 
+
+def plot_menu(final_route: str) -> None:
+    print("\bThis script is going to move files from Download and Desktop folders into ", final_route)
+    print("\bIf you wanna procced press Y")
+    
+# Check python version
+if sys.version_info < (3, 0):
+    print(sys.version_info)
+    print('Please upgrade your Python version to 3.0.0 or higher')
+    sys.exit()
 
 directories_to_be_cleaned = [os.path.expanduser("~/Downloads"), 
                              os.path.expanduser("~/Desktop")]
+
 images_destiny = os.path.expanduser("~/Documents/Pictures")
-
-#### 
-#files_moved = {1: ["Python", 33.2, 'UP'], 2: ["Java", 23.54, 'DOWN'], 3: ["Ruby", 17.22, 'UP'], 10: ["Lua", 10.55, 'DOWN'], 5: ["Groovy", 9.22, 'DOWN'], 6: ["C", 1.55, 'UP']}                         # to save all the data
-#print ("{:<8} {:<15} {:<10} {:<10}".format('Pos','Lang','Percent','Change'))
-#for k, v in files_moved.items():
-#    lang, perc, change = v
-#    print ("{:<8} {:<15} {:<10} {:<10}".format(k, lang, perc, change))
-
-
-#dota_teams = ["Liquid", "Virtus.pro", "PSG.LGD", "Team Secret"] 
-#data = [[1, 2, 1, 'x'], ['x', 1, 1, 'x'], [1, 'x', 0, 1], [2, 0, 2, 1]] 
-#format_row = "{:>12}" * (len(dota_teams) + 1)
-#print(format_row.format("", *dota_teams))
-#for team, row in zip(dota_teams, data):
-#    print(format_row.format(team, *row))
 
 cols_names=["", "Original", "Final", "Moved", "Variation (%)"]
 data_to_display_images={
@@ -29,6 +25,8 @@ data_to_display_images={
     "Downloads": ["-", "-", "-", "-"],
     "Pictures": ["-", "-", "-", "-"],
 }
+
+plot_menu(final_route=images_destiny)
 
 ########################
 
@@ -38,7 +36,6 @@ original_number_of_images = len(os.listdir(os.path.expanduser(images_destiny))) 
 for directory in directories_to_be_cleaned:
     current_files = os.listdir(os.path.expanduser(directory))
     
-
     ## FXXXX THIS
     #data_to_display_images[directory.split("/")[-1]][1] = len(current_files)  ## All files 
 
@@ -81,8 +78,6 @@ print("\n")
 final_number_of_images = len(os.listdir(os.path.expanduser(images_destiny)))
 print("Number of pictures before the process: ", original_number_of_images)
 print("Number of pictures after the process:  ", final_number_of_images, " (+", (final_number_of_images - original_number_of_images)/original_number_of_images * 100, "%)")
-
-
 
 # Print the statistics of the images moved
 print("{:<10} {:<10} {:<10} {:<10} {:<10}"\
