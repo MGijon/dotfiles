@@ -26,6 +26,8 @@ brew install --cask pycharm
 brew install --cask rstudio
 # Docker
 brew install docker
+# Graphviz
+brew install graphviz
 
 # Firefox
 brew install --cask firefox
