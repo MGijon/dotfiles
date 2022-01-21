@@ -68,6 +68,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -81,6 +83,15 @@ if !has('gui_running')
 endif
 set laststatus=2
 
+" NERDTREE
+" ========
 " Start NEDRTree when Vim is started without file arguments
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc()=0 && !exists('s:std_in') | NERDTree | endif
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window remaining in the only tab
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+"
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>m :NERDTreeToggle<CR>
+
