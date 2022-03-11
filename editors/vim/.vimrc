@@ -99,6 +99,8 @@ let NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <leader>m :NERDTreeToggle<CR>
 
+set modifiable               " In order to be able to create files and directories
+
 " FZF
 " ===
 nnoremap <silent> <Leader>f :Rg<CR>
