@@ -7,11 +7,13 @@ syntax on                         " To make sure that the syntax is highlighted 
 
 set tabstop=4
 
+colorscheme slate
+
 " Define which color scheme is used basef upon the VIM mode
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-endif
+"if has('gui_running')
+"	set background=dark
+"	colorscheme solarized
+"endif
 
 " File browsing: ignore a list of files 
 "let NERDTreeIgnore=['\.pyc$', '\.~$']       " ignore .pyc files
