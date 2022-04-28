@@ -74,3 +74,7 @@ brew install gpg pinentry-mac
 ## Install Vundle
 sudo git clone https://github.com/gmarik/vundle.git $HOME\vimfiles\bundle\vundle
 # y luego la password para hacerlo funcionar
+
+# Install recursive grep
+brew install ripgrep
+# If it does not work, I've already use in the past the installation using cargo: $ cargo install ripgrep
