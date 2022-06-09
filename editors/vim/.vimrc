@@ -103,7 +103,24 @@ nnoremap <leader>m :NERDTreeToggle<CR>
 
 set modifiable               " In order to be able to create files and directories
 
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
+let NERDTreeRespectWildIgnore=1  " Nerdtree config for wildignore
+
 " FZF
 " ===
 nnoremap <silent> <Leader>f :Rg<CR>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+" SYNTASTIC
+" =========
+let g:syntastic_python_checkers=['mypy']  " for using mypy for lynting
+set statusline+=%#warningmsg#
+" Recommended settings
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
