@@ -52,6 +52,8 @@ nnoremap <C-L> <C-W><C-L>
 " Enable folding with the spacebar
 nnoremap <space> za
 
+set backspace=indent,eol,start
+
 " ========================================================================== "
 "                               VUNDLE
 " ========================================================================== "
@@ -74,6 +76,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
+Plugin 'psf/black'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -113,14 +116,21 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 
 " SYNTASTIC
 " =========
-let g:syntastic_python_checkers=['mypy']  " for using mypy for lynting
-set statusline+=%#warningmsg#
-" Recommended settings
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" let g:syntastic_python_checkers=['mypy']  " for using mypy for lynting
+"set statusline+=%#warningmsg#
+"" Recommended settings
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
+" BLACK
+" =====
+" to apply black everytime we save a python file
+"augroup black_on_save
+"  autocmd!
+"  autocmd BufWritePre *.py Black
+"augroup end
