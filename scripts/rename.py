@@ -3,7 +3,7 @@
        -d  :  directory that contains the files
        -p  :  base pattern
 """
-import os 
+import os
 import argparse
 
 parser = argparse.ArgumentParser(description="Rename the files inside the folder")
@@ -16,11 +16,11 @@ path = args.d
 patt = args.p
 
 counter = 1
-for original_name in os.listdir(path): 
+for original_name in os.listdir(path):
     file_extension = original_name.split(".")[-1]
     original_file = path + "/" + original_name
     new_name_file = path + "/" + patt + str(counter) + "." + file_extension
-    
+
     try:
         os.rename(original_file, new_name_file)
     except Exception as e:
@@ -29,4 +29,3 @@ for original_name in os.listdir(path):
     counter += 1
 
 print("The name of ", str(counter - 1), " files has been change successfully!!")
-
