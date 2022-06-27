@@ -1,0 +1,24 @@
+#mac files
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# IDE files
+.idea
+.vscode
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Tests
+.pytest_cache
