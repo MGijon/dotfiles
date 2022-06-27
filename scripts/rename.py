@@ -16,7 +16,7 @@ path = args.d
 patt = args.p
 
 if __name__ == "__main__":
-    counter = 1
+    counter: int = 1
     for original_name in os.listdir(path):
         file_extension = original_name.split(".")[-1]
         original_file = path + "/" + original_name
