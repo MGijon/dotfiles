@@ -1,0 +1,28 @@
+############################################
+# IDE generated files
+############################################
+.idea/
+*.iml
+*.iws
+.idea-compl
+*.sc
+.vscode/
+*.swp
+.swp
+
+############################################
+# OS generated files
+############################################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
