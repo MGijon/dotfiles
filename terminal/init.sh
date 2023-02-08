@@ -11,3 +11,7 @@ for exportToSource in "$DOTFILES_PATH/terminal/_exports/"*; do source "$exportTo
 # Register all functions
 for functionToSource in "$DOTFILES_PATH/terminal/_functions/"*; do source "$functionToSource"; done
 
+# Pluging manager for NVim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
