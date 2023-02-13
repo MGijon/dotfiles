@@ -15,8 +15,8 @@ set wildmenu
 
 " Tabs size
 set expandtab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 set ignorecase  	   " Ignorar mayúsculas al hacer una búsqueda
 set smartcase  		   " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
