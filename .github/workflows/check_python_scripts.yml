@@ -3,8 +3,12 @@ name: Check Python scripts
 on:
   push:
     branches: [main]
+    paths:
+      - scripts/**.py
   pull_requests:
     branches: [main]
+    paths:
+      - scripts/**.py
 
 jobs:
   build:
