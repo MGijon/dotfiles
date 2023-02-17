@@ -18,11 +18,11 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 
-set ignorecase  	   " Ignorar mayúsculas al hacer una búsqueda
-set smartcase  		   " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
+set ignorecase  	   " Ignore case letters when searching
+set smartcase  		   " No ignore case letters when the searching term contains them
 
-set spelllang=en,es    " Corregir palabras usando diccionarios en inglés y español
+set spelllang=en,es    " Correct words using dictionaries in English and Spanish
 
-set termguicolors  	   " Activa true colors en la terminal
-set background=light   " Fondo del tema: light o dark
-colorscheme zellner    " Nombre del tema
+set termguicolors  	   " Activate true colors for the terminal
+set background=light
+colorscheme zellner    " Theme name
