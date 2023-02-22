@@ -15,8 +15,8 @@ set wildmenu
 
 " Tabs size
 set expandtab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 set ignorecase  	   " Ignore case letters when searching
 set smartcase  		   " No ignore case letters when the searching term contains them

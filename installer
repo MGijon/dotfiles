@@ -33,6 +33,8 @@ brew upgrade fzf
 brew install graphviz
 # Postgres
 brew install postgresql
+# Data Version Control
+brew install dvc
 
 # Firefox
 brew install --cask firefox
