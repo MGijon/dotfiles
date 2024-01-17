@@ -35,6 +35,8 @@ brew install graphviz
 brew install postgresql
 # Data Version Control
 brew install dvc
+# Julia
+# curl -fsSL https://install.julialang.org | sh
 
 # Firefox
 brew install --cask firefox
