@@ -59,6 +59,8 @@ brew install --cask obs
 brew install --cask dropbox
 # Kindle
 brew install --cask kindle
+# Notion
+brew install --cask notion
 
 # Atom
 brew install --cask atom
