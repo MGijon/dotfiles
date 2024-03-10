@@ -76,6 +76,8 @@ brew install --cask musescore
 
 #
 brew install gpg pinentry-mac
+# Mactex
+brew install --cask mactex
 
 # Conda
 brew install conda
