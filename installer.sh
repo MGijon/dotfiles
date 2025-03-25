@@ -82,9 +82,15 @@ brew install --cask mactex
 # Conda
 brew install conda
 
-## Install Vundle
-sudo git clone https://github.com/gmarik/vundle.git $HOME\vimfiles\bundle\vundle
-# y luego la password para hacerlo funcionar
+## Install Vundle - VIM plugin manager
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Fastfetch
+brew install fastfetch
+
+# TODO: pass password to install plugings
+
+
 
 # Install recursive grep
 brew install ripgrep
