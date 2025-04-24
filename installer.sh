@@ -31,6 +31,9 @@ brew install fzf
 brew upgrade fzf
 # Ghostty
 brew install --cask ghostty
+# TMux
+brew install tmux
+
 # Graphviz
 brew install graphviz
 # Postgres
