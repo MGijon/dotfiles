@@ -29,6 +29,8 @@ brew install docker
 # FZF
 brew install fzf
 brew upgrade fzf
+# Ghostty
+brew install --cask ghostty
 # Graphviz
 brew install graphviz
 # Postgres
