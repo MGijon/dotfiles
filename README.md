@@ -106,4 +106,7 @@ awesome:
 Install:
 Search config: 
 
+TMux reference: https://www.youtube.com/watch?v=SRtvt3MxWrM
+Ghostty reference: https://www.youtube.com/watch?v=jWuQxU4bDeU
 -->
+
