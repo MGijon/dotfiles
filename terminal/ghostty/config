@@ -1,7 +1,8 @@
 # ~/.config/ghoshttly
 
 # font-size = 15  # this size is too big for my laptop's screen
-theme = rose-pine 
+# theme = rose-pine
+theme = blazer
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
