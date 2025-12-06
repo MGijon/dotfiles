@@ -100,3 +100,5 @@ brew install fastfetch
 # Install recursive grep
 brew install ripgrep
 # If it does not work, I've already use in the past the installation using cargo: $ cargo install ripgrep
+brew install typst
+
