@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - scripts/**.py
-  pull_requests:
+  pull_request:
     branches: [main]
     paths:
       - scripts/**.py
@@ -34,13 +34,13 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run type checks
-        # stop the building if the type checking is not properly done
-        run: |
-          mypy . --exclude libraries
+      # stop the building if the type checking is not properly done
+      run: |
+        mypy . --exclude libraries
     - name: Run linting
-        # stop the building if the files has not been properly formatted
-        run: | 
-          black . --check --verbose
+      # stop the building if the files has not been properly formatted
+      run: |
+        black . --check --verbose
     - name: Test with pytest
       run: |
         # stop the process if some of the tests fails
