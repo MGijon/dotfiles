@@ -10,8 +10,21 @@ __pycache__/
 *.so
 
 # IDE files
-.idea
-.vscode
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.iml
+.metals/
+.bloop/
+
+# IDE auto-generated
+out/
+.cache/
 
 # Environments
 .env
@@ -23,6 +36,15 @@ ENV/
 # Tests
 .pytest_cache
 
+# iCloud
+*.icloud
+.icloud
+
 # Claude
 .claude/settings.local.json
 .claude/projects/
+.claude/todos/
+
+# GitHub Copilot
+.copilot/
+.github/copilot-instructions.md
