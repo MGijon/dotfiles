@@ -62,6 +62,28 @@ Detects the OS automatically and runs the appropriate script:
 | :----- | :---- | :---------- |
 | `rename.py` | `python3 rename.py -d <path> -p <pattern>` | Renames all files in a directory using a base pattern and consecutive indexes (e.g. `photo1.jpg`, `photo2.jpg`). Files are processed in alphabetical order and extensions are preserved. |
 
+All commands below should be run from the `scripts/` directory.
+
+**Format**
+```bash
+ruff format .
+```
+
+**Lint**
+```bash
+ruff check .
+```
+
+**Type check**
+```bash
+mypy . --exclude tests
+```
+
+**Tests**
+```bash
+pytest -v
+```
+
 ***
 <a name="#shortcuts"></a>
 ## Shortcuts
