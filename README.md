@@ -15,7 +15,9 @@ Dotfiles for configuring my mac easily.
 	- [Other apps dotfiles](#other-apps-dotfiles)
 	- [Shell scripts](#shell-scripts)
 	- [Python scripts](#python-scripts)
+	- [Ubuntu Setup](#ubuntu-setup)
 	- [Shortcuts](#shortcuts)
+		- [AwesomeWM](#awesomewm)
 		- [Terminal](#terminal)
 		- [Vim](#vim)
 		- [NVim](#nvim)
@@ -25,8 +27,12 @@ Dotfiles for configuring my mac easily.
 ## Installation
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/installer)>
+bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/main.sh)
 ```
+
+Detects the OS automatically and runs the appropriate script:
+- **macOS** → `macos-setup.sh` (Homebrew-based)
+- **Ubuntu/Debian** → `ubuntu-setup.sh` (apt-based)
 
 ***
 <a name="#-shell-dotfiles)"></a>
@@ -50,16 +56,71 @@ bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/installer)
 
 ***
 <a name="#python-scripts"></a>
-## Python scripts 
+## Python scripts
 
-* Execute with ```python3 script.py```.
-* CONTENT:
-	* **cleaner.py**: move files to their corresponding folders from Desktop and Downloads.
-    * **rename.py**: rename files contained in a specified path using a given pattern (consecutively).
+| Script | Usage | Description |
+| :----- | :---- | :---------- |
+| `rename.py` | `python3 rename.py -d <path> -p <pattern>` | Renames all files in a directory using a base pattern and consecutive indexes (e.g. `photo1.jpg`, `photo2.jpg`). Files are processed in alphabetical order and extensions are preserved. |
+
+All commands below should be run from the `scripts/` directory.
+
+**Format**
+```bash
+ruff format .
+```
+
+**Lint**
+```bash
+ruff check .
+```
+
+**Type check**
+```bash
+mypy . --exclude tests
+```
+
+**Tests**
+```bash
+pytest -v
+```
 
 ***
 <a name="#shortcuts"></a>
 ## Shortcuts
+
+<a name="#awesomewm"></a>
+### AwesomeWM
+
+The **Super key** (`modkey` in AwesomeWM) defaults to the **Windows / Command key** (`Mod4`). To change it, edit `~/.config/awesome/rc.lua`:
+
+```lua
+-- Change Mod4 (Super/Win) to Mod1 (Alt) if preferred
+local modkey = "Mod4"
+```
+
+Common values:
+- `"Mod4"` — Windows / Command key (default)
+- `"Mod1"` — Alt key
+
+| Shortcut | Description |
+| :------: | :---------- |
+| `Super + Enter` | Open terminal |
+| `Super + Shift + C` | Close focused window |
+| `Super + R` | Open run prompt |
+| `Super + S` | Show keybindings |
+| `Super + J` | Focus next window |
+| `Super + K` | Focus previous window |
+| `Super + H` | Shrink master width |
+| `Super + L` | Grow master width |
+| `Super + Space` | Switch layout |
+| `Super + Shift + Space` | Switch layout (reverse) |
+| `Super + F` | Toggle fullscreen |
+| `Super + M` | Toggle maximize |
+| `Super + N` | Minimize window |
+| `Super + 1-9` | Switch to tag (workspace) |
+| `Super + Shift + 1-9` | Move window to tag |
+| `Super + Shift + Q` | Quit AwesomeWM |
+| `Super + Ctrl + R` | Reload AwesomeWM config |
 
 <a name="#terminal"></a>
 ### Terminal
@@ -101,12 +162,41 @@ bash <(curl -s https://raw.githubusercontent.com/MGijon/dotfiles/main/installer)
 | Shortcut | Plugging? | Description |
 | :------: | :-------: | :---------- |
 
-<!-- 
+***
+<a name="#ubuntu-setup"></a>
+## Ubuntu Setup
+
+Run `setup.sh` after a fresh Ubuntu install to restore the environment automatically.
+
+| Step | What it does |
+|------|-------------|
+| 1 | `apt update && upgrade` |
+| 2 | Core packages: git, curl, ripgrep, tmux, neovim, nitrogen, compton, suckless-tools, pcmanfm |
+| 3 | AwesomeWM + copies default `rc.lua` to `~/.config/awesome/` |
+| 4 | Ghostty (via the mkasberg installer), sets as default terminal, copies config from dotfiles |
+| 5 | Nerd Fonts (via the officialrajdeepsingh installer) |
+| 6 | NvChad — clones the starter into `~/.config/nvim` |
+| 7 | tmuxifier — clones repo, adds required lines to `.bashrc` |
+| 8 | Snap packages: VSCode, typst, htop |
+| 9 | fastfetch (via PPA) |
+| 10 | Rust (via rustup) |
+| 11 | Node.js (LTS) + Yarn |
+| 12 | Docker (official repo) + adds user to the docker group |
+| 13 | R (`r-base`) |
+| 14 | LaTeX (`texlive-full`) |
+| 15 | SSH key (ed25519) — generates, adds to agent, prints public key, prompts to add to GitHub |
+| 16 | Copies `.gitconfig` and `.gitignore_global` from dotfiles |
+| 17 | Wallpapers reminder (optionally opens the Wallpaper-Bank page) |
+
+***
+
+<!--
 awesome:
 Install:
 Search config: 
 
 TMux reference: https://www.youtube.com/watch?v=SRtvt3MxWrM
 Ghostty reference: https://www.youtube.com/watch?v=jWuQxU4bDeU
+https://ghostty.org/docs/config/keybind/reference
 -->
 

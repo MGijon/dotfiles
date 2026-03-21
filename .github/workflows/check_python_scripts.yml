@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - scripts/**.py
-  pull_requests:
+  pull_request:
     branches: [main]
     paths:
       - scripts/**.py
@@ -16,32 +16,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.9"
+        python-version: "3.12"
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest black mypy
+        pip install ruff mypy pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
+
+    - name: Lint and format check (ruff)
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Run type checks
-        # stop the building if the type checking is not properly done
-        run: |
-          mypy . --exclude libraries
-    - name: Run linting
-        # stop the building if the files has not been properly formatted
-        run: | 
-          black . --check --verbose
-    - name: Test with pytest
+        ruff check scripts/
+        ruff format --check scripts/
+
+    - name: Type check (mypy)
       run: |
-        # stop the process if some of the tests fails
-        pytest scripts/ 
+        mypy scripts/ --exclude scripts/tests
+
+    - name: Test (pytest)
+      run: |
+        pytest scripts/ -v
