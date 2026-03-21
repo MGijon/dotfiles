@@ -1,8 +1,9 @@
 """Rename the files inside the folder with a given pattern and consecutive indexes.
-   Arguments:
-       -d  :  directory that contains the files
-       -p  :  base pattern
+Arguments:
+    -d  :  directory that contains the files
+    -p  :  base pattern
 """
+
 import os
 import argparse
 
