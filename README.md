@@ -56,12 +56,11 @@ Detects the OS automatically and runs the appropriate script:
 
 ***
 <a name="#python-scripts"></a>
-## Python scripts 
+## Python scripts
 
-* Execute with ```python3 script.py```.
-* CONTENT:
-	* **cleaner.py**: move files to their corresponding folders from Desktop and Downloads.
-    * **rename.py**: rename files contained in a specified path using a given pattern (consecutively).
+| Script | Usage | Description |
+| :----- | :---- | :---------- |
+| `rename.py` | `python3 rename.py -d <path> -p <pattern>` | Renames all files in a directory using a base pattern and consecutive indexes (e.g. `photo1.jpg`, `photo2.jpg`). Files are processed in alphabetical order and extensions are preserved. |
 
 ***
 <a name="#shortcuts"></a>
