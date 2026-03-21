@@ -47,4 +47,3 @@ ENV/
 
 # GitHub Copilot
 .copilot/
-.github/copilot-instructions.md
