@@ -6,27 +6,36 @@
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description="Rename the files inside the folder")
 
-parser.add_argument("-d", metavar="path", type=str, help="Direcectory")
-parser.add_argument("-p", type=str, help="Pattern to be replicated")
+def rename_files(path: str, pattern: str) -> None:
+    filenames = sorted(os.listdir(path))
+    counter = 1
+    success = 0
 
-args = parser.parse_args()
-path = args.d
-patt = args.p
+    for original_name in filenames:
+        original_file = os.path.join(path, original_name)
 
-if __name__ == "__main__":
-    counter: int = 1
-    for original_name in os.listdir(path):
-        file_extension = original_name.split(".")[-1]
-        original_file = path + "/" + original_name
-        new_name_file = path + "/" + patt + str(counter) + "." + file_extension
+        parts = original_name.rsplit(".", 1)
+        if len(parts) == 2:
+            new_name = f"{pattern}{counter}.{parts[1]}"
+        else:
+            new_name = f"{pattern}{counter}"
+        new_file = os.path.join(path, new_name)
 
         try:
-            os.rename(original_file, new_name_file)
+            os.rename(original_file, new_file)
+            success += 1
+            counter += 1
         except Exception as e:
-            print(e)
+            print(f"[ERROR] Could not rename '{original_name}': {e}")
 
-        counter += 1
+    print(f"{success} of {len(filenames)} files renamed successfully.")
 
-    print(f"The name of {str(counter - 1)} files has been change successfully!!")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Rename the files inside the folder")
+    parser.add_argument("-d", metavar="path", type=str, required=True, help="Directory")
+    parser.add_argument("-p", type=str, required=True, help="Pattern to be replicated")
+    args = parser.parse_args()
+
+    rename_files(args.d, args.p)
