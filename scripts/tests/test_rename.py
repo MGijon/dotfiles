@@ -1,7 +1,6 @@
 """Tests for rename.py using the Given/When/Then convention."""
 
 import os
-import pytest
 
 from rename import rename_files
 
